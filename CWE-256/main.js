@@ -1,13 +1,15 @@
-const main = async () => {
-    const user = { username: 'admin', password: 'password1234' }
+const DB_PASSWORD = 'password1234'
 
-    const response = await fetch('/api', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username: user }),
-    })
+const main = () => {
+    const dbConfig = {
+        host: 'localhost',
+        user: 'admin',
+        password: DB_PASSWORD,
+    }
 
-    return response.json()
+    connectToDataBase(dbConfig)
+}
+
+const connectToDataBase = (dbConfig) => {
+    console.log(`Connecting with ${dbConfig}`)
 }
