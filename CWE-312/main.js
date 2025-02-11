@@ -4,3 +4,5 @@ const main = (key, value) => {
     item[key] = value
     sessionStorage.setItem('vulnerable', JSON.stringify(item))
 }
+
+main('password', 'password')
