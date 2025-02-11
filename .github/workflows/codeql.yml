@@ -5,22 +5,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-    - cron: '16 15 * * 1'
 
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
-    
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     permissions:
       security-events: write
-
       packages: read
-
       actions: read
       contents: read
-
     strategy:
       fail-fast: false
       matrix:
