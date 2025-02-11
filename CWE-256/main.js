@@ -1,15 +1,5 @@
-const DB_PASSWORD = 'password1234'
+const main = (username, password) => {
+    console.log(`user: ${username}, password: ${password}`)
 
-const main = () => {
-    const dbConfig = {
-        host: 'localhost',
-        user: 'admin',
-        password: DB_PASSWORD,
-    }
-
-    connectToDataBase(dbConfig)
-}
-
-const connectToDataBase = (dbConfig) => {
-    console.log(`Connecting with ${dbConfig}`)
+    localStorage.setItem('storedPassword', password)
 }
