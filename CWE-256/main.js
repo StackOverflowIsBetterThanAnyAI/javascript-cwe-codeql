@@ -1,7 +1,7 @@
-const main = () => {
+const main = async () => {
     const user = { username: 'admin', password: 'password1234' }
 
-    fetch('/api', {
+    const response = await fetch('/api', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -9,5 +9,5 @@ const main = () => {
         body: JSON.stringify({ username: user }),
     })
 
-    return null
+    return response.json()
 }
