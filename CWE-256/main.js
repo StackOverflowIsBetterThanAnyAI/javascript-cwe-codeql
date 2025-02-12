@@ -1,5 +1,8 @@
-const main = (username, password) => {
-    console.log(`user: ${username}, password: ${password}`)
+const main = () => {
+    const credentials = {
+        user: 'admin',
+        password: 'password1234',
+    }
 
-    localStorage.setItem('storedPassword', password)
+    localStorage.setItem('storedPassword', credentials.password)
 }
