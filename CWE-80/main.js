@@ -1,5 +1,7 @@
 const main = (html) => {
     const regex = /<script>.*<\/script>/gi
 
-    return regex.test(html)
+    if (regex.test(html)) {
+        document.body.innerHTML = html
+    }
 }
