@@ -1,7 +1,10 @@
 const main = (html) => {
-    const regex = /<script>.*<\/script>/gi
+    const scriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gi
+    let match
 
-    if (regex.test(html)) {
-        document.body.innerHTML = html
+    while ((match = scriptRegex.exec(html)) !== null) {
+        html = html.replace(match[0], match[1])
     }
+
+    return html
 }
