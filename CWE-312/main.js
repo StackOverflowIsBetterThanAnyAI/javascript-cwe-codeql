@@ -3,4 +3,6 @@ const main = () => {
     sessionStorage.setItem('vulnerable', password)
 
     console.log(`password: ${password}`)
+
+    console.log(JSON.stringify(process.env))
 }
