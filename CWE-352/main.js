@@ -5,8 +5,10 @@ const app = express()
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 
+const emails = new Map()
+
 const updateEmail = (sessionId, email) => {
-    console.log(`Session ${sessionId} changed email to ${email}`)
+    emails.set(sessionId, email)
 }
 
 app.post('/account/email', (req, res) => {
