@@ -1,13 +1,9 @@
-const main = () => {
-    const dbConfig = {
-        host: 'localhost',
-        user: 'admin',
-        password: '',
-    }
-
-    connectToDataBase(dbConfig)
+const dbConfig = {
+    host: 'localhost',
+    user: 'admin',
+    password: '',
 }
 
-const connectToDataBase = (dbConfig) => {
-    console.log(`Connecting with ${dbConfig}`)
+const main = (user, password) => {
+    return user === dbConfig.user && password === dbConfig.password
 }
