@@ -1,6 +1,7 @@
-const main = (x, y) => {
-    const result = x
-    const value = y
-    console.log(y)
-    return 2 * x
+const main = (input) => {
+    const sanitized = input
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+    document.body.innerHTML = input
 }
